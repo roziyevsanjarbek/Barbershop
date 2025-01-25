@@ -1,3 +1,5 @@
 .idea
 .env
 vendor
+my_key
+my_key.pub

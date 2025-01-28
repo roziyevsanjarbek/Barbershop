@@ -1,39 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Barbershop Dashboard</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-</head>
-<body class="bg-gray-100">
+<?php components('dashboard/header'); ?>
+<div class="bg-gray-100">
 <div class="min-h-screen flex">
     <!-- Sidebar -->
-    <aside class="bg-gray-800 text-white w-64 space-y-6 py-7 px-2 absolute inset-y-0 left-0 transform -translate-x-full md:relative md:translate-x-0 transition duration-200 ease-in-out">
-        <div class="flex items-center space-x-2 px-4">
-            <i class="fas fa-cut text-2xl"></i>
-            <span class="text-2xl font-extrabold">Barbershop</span>
-        </div>
-        <nav class="mt-4">
-            <a href="dashboard.html" class="flex items-center px-4 py-2 hover:bg-gray-700">
-                <i class="fas fa-tachometer-alt mr-3"></i>Dashboard
-            </a>
-            <a href="services.html" class="flex items-center px-4 py-2 hover:bg-gray-700">
-                <i class="fas fa-cut mr-3"></i>Services
-            </a>
-            <a href="customers.html" class="flex items-center px-4 py-2 hover:bg-gray-700">
-                <i class="fas fa-users mr-3"></i>Customers
-            </a>
-            <a href="booking.html" class="flex items-center px-4 py-2 hover:bg-gray-700">
-                <i class="fas fa-calendar-alt mr-3"></i>Bookings
-            </a>
-            <a href="reports.html" class="flex items-center px-4 py-2 bg-gray-700">
-                <i class="fas fa-chart-bar mr-3"></i>Reports
-            </a>
-        </nav>
-    </aside>
+    <?php components('dashboard/sidebar'); ?>
 
     <!-- Main Content -->
     <div class="flex-1 flex flex-col overflow-hidden">
@@ -300,5 +269,6 @@
         }
     });
 </script>
-</body>
-</html>
+</div>
+<?php components('dashboard/footer'); ?>
+

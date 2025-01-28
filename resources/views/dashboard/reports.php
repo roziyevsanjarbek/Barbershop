@@ -1,14 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Reports - Barbershop Dashboard</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-</head>
-<body class="bg-gray-100">
+<?php components('dashboard/header'); ?>
+<div class="bg-gray-100">
 <!-- Mobile menu button -->
 <button class="fixed top-4 left-4 z-20 lg:hidden text-gray-500 hover:text-gray-700" id="showSidebar">
     <i class="fas fa-bars text-2xl"></i>
@@ -16,28 +7,8 @@
 
 <div class="flex">
     <!-- Sidebar -->
-    <aside class="fixed inset-y-0 left-0 z-30 w-64 bg-gray-800 text-white transform -translate-x-full lg:translate-x-0 transition duration-200 ease-in-out lg:static" id="mobileSidebar">
-        <div class="p-4">
-            <h2 class="text-2xl font-bold">Barbershop</h2>
-        </div>
-        <nav class="mt-4">
-            <a href="dashboard.html" class="flex items-center px-4 py-2 hover:bg-gray-700">
-                <i class="fas fa-tachometer-alt mr-3"></i>Dashboard
-            </a>
-            <a href="services.html" class="flex items-center px-4 py-2 hover:bg-gray-700">
-                <i class="fas fa-cut mr-3"></i>Services
-            </a>
-            <a href="customers.html" class="flex items-center px-4 py-2 hover:bg-gray-700">
-                <i class="fas fa-users mr-3"></i>Customers
-            </a>
-            <a href="booking.html" class="flex items-center px-4 py-2 hover:bg-gray-700">
-                <i class="fas fa-calendar-alt mr-3"></i>Bookings
-            </a>
-            <a href="reports.html" class="flex items-center px-4 py-2 bg-gray-700">
-                <i class="fas fa-chart-bar mr-3"></i>Reports
-            </a>
-        </nav>
-    </aside>
+    <?php components('dashboard/sidebar'); ?>
+
 
     <!-- Main Content -->
     <main class="ml-64 flex-1 p-8">
@@ -198,5 +169,6 @@
         mobileSidebar.classList.toggle('-translate-x-full');
     });
 </script>
-</body>
-</html>
+</div>
+<?php components('dashboard/footer'); ?>
+

@@ -9,16 +9,7 @@
 </head>
 <body class="bg-gray-100">
 <!-- Navigation -->
-<nav class="bg-gray-800 text-white px-4 py-3">
-    <div class="container mx-auto flex justify-between items-center">
-        <a href="index.html" class="text-2xl font-bold">Hama Barbershop</a>
-        <div class="hidden md:flex space-x-4">
-            <a href="index.html" class="hover:text-gray-300">Home</a>
-            <a href="services.html" class="hover:text-gray-300">Services</a>
-            <a href="booking.html" class="bg-indigo-600 px-4 py-2 rounded-lg hover:bg-indigo-700">Book Now</a>
-        </div>
-    </div>
-</nav>
+<?php components('user-dashboard/navbar'); ?>
 
 <!-- Registration Form -->
 <div class="min-h-screen flex items-center justify-center px-4 py-12">
@@ -49,6 +40,11 @@
                 <div>
                     <label for="confirm-password" class="block text-sm font-medium text-gray-700">Confirm Password</label>
                     <input id="confirm-password" name="confirm-password" type="password" required
+                           class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500">
+                </div>
+                <div>
+                    <label for="secret-word" class="block text-sm font-medium text-gray-700">Secret Word</label>
+                    <input id="secret-word" name="confirm-password" type="password" required
                            class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500">
                 </div>
             </div>
@@ -101,7 +97,7 @@
         await apiFetch("/register", {method: "POST", body: formData})
             .then(data => {
                 localStorage.setItem('token', data.token);
-                window.location.href = '/dashboard';
+                window.location.href = '/dashboard/overview';
             })
             .catch((error) => {
                 console.error(error.data.errors);

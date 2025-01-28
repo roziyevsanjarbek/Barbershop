@@ -9,6 +9,10 @@ class HomeController
         view('home');
     }
 
+    public static function about(){
+        view('about');
+    }
+
     public static function dashboard()
     {
         view('dashboard/dashboard');
@@ -20,11 +24,26 @@ class HomeController
     }
 
     public static function booking(){
-        view('dashboard/booking');
+        view('user-dashboard/booking');
     }
 
     public static function services(){
         view('dashboard/services');
+    }
+
+    public static function reports(){
+        view('dashboard/reports');
+    }
+
+
+    public static function overview(){
+        view('user-dashboard/overview');
+    }
+    public static function appointments(){
+        view('user-dashboard/appointments');
+    }
+    public static function rewards(){
+        view('user-dashboard/rewards');
     }
 
 

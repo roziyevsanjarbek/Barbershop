@@ -8,6 +8,11 @@ function view(string $page, array $data = [])
     extract($data);
     require 'resources/views/' . $page . '.php';
 }
+function components(string $component, array $data = [])
+{
+    extract($data);
+    require '../resources/views/components/' . $component . '.php';
+}
 
 function redirect(string $url)
 {
